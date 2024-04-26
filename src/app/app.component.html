@@ -1,0 +1,23 @@
+Enter Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="name"><br>
+Enter Address:&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="address"><br>
+Enter MobileNO:
+<input type="number" [(ngModel)]="mobile"><br>
+<button (click)="add()">Add</button><br>
+
+<table border="1">
+  <tr>
+    <th>SrNo</th><th>Name</th><th>Address</th><th>Mobile</th><th>Action</th>
+  </tr>
+  <tr *ngFor="let customer of customers; let i=index">
+    <td>{{i+1}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.mobile}}</td>
+    <td>
+      <button (click)="update(customer)">Update</button>
+      <button (click)="delete(customer)">Delete</button>
+    </td>
+  </tr>
+</table>
